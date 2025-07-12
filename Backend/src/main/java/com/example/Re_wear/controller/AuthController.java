@@ -13,7 +13,7 @@ import com.example.Re_wear.service.UserService;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/temp")
+@RequestMapping("/auth")
 public class AuthController {
 
     @Autowired

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { ApiHomeService } from './../../apiservice'
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private apiService: ApiHomeService) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -25,7 +27,7 @@ export class RegisterComponent implements OnInit {
   onRegister(): void {
     if (this.registerForm.valid) {
       console.log('Registration successful:', this.registerForm.value);
-      // API call or navigation here
+      this.apiService.signup(this.registerForm.value).subscribe();
     } else {
       this.registerForm.markAllAsTouched();
     }
