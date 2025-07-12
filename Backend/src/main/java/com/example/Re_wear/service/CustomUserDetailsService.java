@@ -13,6 +13,7 @@ import com.example.Re_wear.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
+
     private final UserRepository userRepository;
 
     public CustomUserDetailsService(UserRepository userRepository) {
@@ -23,13 +24,14 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("User not found with email: " + email);
         }
-        String role = user.isAdmin() ? "ROLE_ADMIN" : "ROLE_USER";
+
+        // Assigning a default role "USER"
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
-                Collections.singletonList(new SimpleGrantedAuthority(role))
+                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
         );
     }
 }
