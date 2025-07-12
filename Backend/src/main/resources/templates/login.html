@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login - ReWear</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form th:action="@{/auth/login}" method="post">
+        <label>Email: <input type="email" name="email" required></label><br>
+        <label>Password: <input type="password" name="password" required></label><br>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/auth/signup">Sign up</a></p>
+</body>
+</html>

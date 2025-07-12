@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Panel - ReWear</title>
+</head>
+<body>
+    <h2>Admin Panel</h2>
+    <h3>Pending Item Listings</h3>
+    <ul>
+        <li th:each="item : ${pendingItems}">
+            <span th:text="${item.title}"></span>
+            <form th:action="@{'/admin/approve/' + ${item.id}}" method="post" style="display:inline;">
+                <button type="submit">Approve</button>
+            </form>
+            <form th:action="@{'/admin/reject/' + ${item.id}}" method="post" style="display:inline;">
+                <button type="submit">Reject</button>
+            </form>
+        </li>
+    </ul>
+    <h3>Remove Items</h3>
+    <ul>
+        <li th:each="item : ${allItems}">
+            <span th:text="${item.title}"></span>
+            <form th:action="@{'/admin/remove/' + ${item.id}}" method="post" style="display:inline;">
+                <button type="submit">Remove</button>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Browse Items - ReWear</title>
+</head>
+<body>
+    <h2>Browse Items</h2>
+    <ul>
+        <li th:each="item : ${items}">
+            <a th:href="@{'/items/' + ${item.id}}" th:text="${item.title}"></a>
+        </li>
+    </ul>
+</body>
+</html>

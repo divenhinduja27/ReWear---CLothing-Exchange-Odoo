@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Item Detail - ReWear</title>
+</head>
+<body>
+    <h2 th:text="${item.title}">Item Title</h2>
+    <div>
+        <img th:src="${item.imageUrl}" alt="Item Image" style="max-width:300px;"/>
+        <p th:text="${item.description}"></p>
+        <p>Category: <span th:text="${item.category}"></span></p>
+        <p>Type: <span th:text="${item.type}"></span></p>
+        <p>Size: <span th:text="${item.size}"></span></p>
+        <p>Condition: <span th:text="${item.condition}"></span></p>
+        <p>Tags: <span th:text="${item.tags}"></span></p>
+        <p>Uploader: <span th:text="${item.uploaderId}"></span></p>
+        <p>Status: <span th:text="${item.available} ? 'Available' : 'Not Available'"></span></p>
+        <button>Swap Request</button>
+        <button>Redeem via Points</button>
+    </div>
+</body>
+</html>

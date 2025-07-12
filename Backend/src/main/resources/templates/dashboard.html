@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard - ReWear</title>
+</head>
+<body>
+    <h2>User Dashboard</h2>
+    <div>
+        <p>Name: <span th:text="${user.name}"></span></p>
+        <p>Email: <span th:text="${user.email}"></span></p>
+        <p>Points: <span th:text="${user.points}"></span></p>
+    </div>
+    <div>
+        <h3>Your Items</h3>
+        <ul>
+            <li th:each="item : ${items}" th:text="${item.title}"></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Ongoing Swaps</h3>
+        <ul>
+            <li th:each="swap : ${ongoingSwaps}" th:text="${swap.itemId}"></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Completed Swaps</h3>
+        <ul>
+            <li th:each="swap : ${completedSwaps}" th:text="${swap.itemId}"></li>
+        </ul>
+    </div>
+</body>
+</html>
