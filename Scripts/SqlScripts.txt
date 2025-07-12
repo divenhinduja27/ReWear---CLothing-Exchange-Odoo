@@ -1,0 +1,46 @@
+CREATE TABLE Users (
+    userid INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(10),
+    );
+	drop table Users;
+	ALTER TABLE users ADD phone_number VARCHAR(20);
+	ALTER TABLE users ADD  name varchar(100);
+	ALTER TABLE Users ADD username varchar(100);
+	select * from Users;
+
+
+CREATE TABLE Items (
+    itemid INT IDENTITY(1,1) PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(1000),
+    tag VARCHAR(100),
+    size VARCHAR(20),
+	point INT NOT NULL,
+    available VARCHAR(10),
+    category VARCHAR(50),
+    previouslistings VARCHAR(500),
+    userid INT NOT NULL,
+    images VARCHAR(500),
+    FOREIGN KEY (userid) REFERENCES Users(userid)
+);
+
+CREATE TABLE Orders (
+    orderid INT IDENTITY(1,1) PRIMARY KEY,
+    itemid INT NOT NULL,
+    buyerid INT,
+    category VARCHAR(20),
+    isbuy VARCHAR(10),
+    status VARCHAR(20) DEFAULT 'pending',
+    FOREIGN KEY (itemid) REFERENCES Items(itemid),
+    FOREIGN KEY (buyerid) REFERENCES Users(userid)
+);
+CREATE TABLE Admins (
+    adminid INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    action_type VARCHAR(20)
+);
