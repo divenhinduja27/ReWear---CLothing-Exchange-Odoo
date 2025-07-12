@@ -1,1 +1,27 @@
-<p>product-detail works!</p>
+<div class="product-detail-container">
+  <!-- Main product image -->
+  <div class="main-image">
+    <img [src]="product.image" alt="{{ product.name }}">
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <h1>{{ product.name }}</h1>
+    <p class="description">{{ product.description }}</p>
+
+    <div class="product-meta">
+      <p><strong>Brand:</strong> {{ product.details.brand }}</p>
+      <p><strong>Category:</strong> {{ product.details.category }}</p>
+      <p><strong>Size:</strong> {{ product.details.size }}</p>
+      <p><strong>Condition:</strong> {{ product.details.condition }}</p>
+      <p><strong>Material:</strong> {{ product.details.material }}</p>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <h2>More Images</h2>
+    <div class="gallery">
+      <img *ngFor="let img of product.gallery" [src]="img" alt="Product gallery image" />
+    </div>
+  </div>
+</div>
