@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LandingComponent } from './landing/landing.component';
 import { CoverPageComponent } from './cover-page/cover-page.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { CoverPageComponent } from './cover-page/cover-page.component';
     CoverPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class HomeModule { }
