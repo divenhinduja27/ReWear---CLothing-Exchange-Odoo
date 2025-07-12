@@ -1,0 +1,105 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eac8a6, #dc3c22);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.dashboard-content {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fbf5de;
+  background-image: url('/assets/avatar.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.user-info h2 {
+  margin: 0 0 10px 0;
+}
+
+.user-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.user-stats {
+  margin-left: auto;
+  display: flex;
+  gap: 25px;
+}
+
+.user-stats .stat {
+  text-align: center;
+}
+
+.user-stats .stat h4 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.user-stats .stat p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.dashboard-section {
+  margin-top: 30px;
+}
+
+.dashboard-section h3 {
+  margin-bottom: 16px;
+  border-bottom: 2px solid #fbf5de;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.items-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.item-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 140px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #eee;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.item-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}

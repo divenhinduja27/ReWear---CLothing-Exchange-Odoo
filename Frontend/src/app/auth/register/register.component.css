@@ -1,0 +1,143 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #EAC8A6, #DC3C22);
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.screen-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.screen-title h4 {
+  font-size: 22px;
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 14px;
+  background-color: #2e2e2e;
+  color: #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.screen-title p {
+  font-size: 15px;
+  color: #eee;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.register-box {
+  background-color: #1f1f1f;
+  padding: 50px 35px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.register-box:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 35px;
+  border: 2px solid #FBF5DE;
+}
+
+/* Form Styling */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #eee;
+  margin-bottom: 18px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus {
+  border-color: #FBF5DE;
+  background-color: #333;
+}
+
+button {
+  background-color: #FBF5DE;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(251, 245, 222, 0.3);
+}
+
+button:hover {
+  background-color: #f1eccf;
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .register-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .register-box {
+    padding: 40px 25px;
+  }
+}
+.error {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+.already-registered {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+.already-registered a {
+  color: #FBF5DE;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
