@@ -9,9 +9,7 @@ import { UserDashboardComponent } from './auth/user-dashboard/user-dashboard.com
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    UserDashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
