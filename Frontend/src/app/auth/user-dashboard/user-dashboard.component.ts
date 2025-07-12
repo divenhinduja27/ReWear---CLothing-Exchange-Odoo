@@ -5,16 +5,18 @@ interface Item {
   image: string;
 }
 
+interface UserStats {
+  listings: number;
+  purchases: number;
+  reviews: number;
+}
+
 interface User {
   fullName: string;
   email: string;
   username: string;
   memberSince: Date;
-  stats: {
-    listings: number;
-    purchases: number;
-    reviews: number;
-  };
+  stats: UserStats;
   listings: Item[];
   purchases: Item[];
 }
@@ -25,10 +27,18 @@ interface User {
   styleUrls: ['./user-dashboard.component.css'],
 })
 export class UserDashboardComponent implements OnInit {
-  user: User;
+  user!: User;
 
-  constructor() {
-    // Replace with real user data fetching logic
+  get stats() {
+    return [
+      { label: 'Listings', value: this.user.stats.listings },
+      { label: 'Purchases', value: this.user.stats.purchases },
+      { label: 'Reviews', value: this.user.stats.reviews },
+    ];
+  }
+
+  ngOnInit(): void {
+    // Simulated API data — replace this with a real service
     this.user = {
       fullName: 'John Doe',
       email: 'john@example.com',
@@ -40,19 +50,19 @@ export class UserDashboardComponent implements OnInit {
         reviews: 12,
       },
       listings: [
-        { title: 'Item 1', image: '/assets/item1.jpg' },
-        { title: 'Item 2', image: '/assets/item2.jpg' },
-        { title: 'Item 3', image: '/assets/item3.jpg' },
-        { title: 'Item 4', image: '/assets/item4.jpg' },
+        { title: 'Item 1', image: '/assets/images/item1.jpg' },
+        { title: 'Item 2', image: '/assets/images/item2.jpg' },
+        { title: 'Item 3', image: '/assets/images/item3.jpg' },
+        { title: 'Item 4', image: '/assets/images/item4.jpg' },
+        { title: 'Item 5', image: '/assets/images/item5.jpeg' },
       ],
       purchases: [
-        { title: 'Product A', image: '/assets/productA.jpg' },
-        { title: 'Product B', image: '/assets/productB.jpg' },
-        { title: 'Product C', image: '/assets/productC.jpg' },
-        { title: 'Product D', image: '/assets/productD.jpg' },
+        { title: 'Product A', image: '/assets/images/ProductB.jpeg' },
+        { title: 'Product B', image: '/assets/images/ProductC.jpeg' },
+        { title: 'Product C', image: '/assets/images/ProductD.jpeg' },
+        { title: 'Product D', image: '/assets/images/ProductE.jpeg' },
+        { title: 'Product E', image: '/assets/images/ProductF.jpeg' },
       ],
     };
   }
-
-  ngOnInit(): void {}
 }
