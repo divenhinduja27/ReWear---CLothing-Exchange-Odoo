@@ -1,40 +1,31 @@
-<div class="wrapper">
-  <h2 class="section-title">Landing Page</h2>
+<div class="container">
 
-  <!-- Top Bar -->
   <div class="top-bar">
     <div class="logo"></div>
     <div class="window-btn"></div>
   </div>
 
-  <!-- Search -->
-  <div class="search-container">
+  <div class="search-bar">
     <input type="text" placeholder="Search..." />
     <button>🔍</button>
   </div>
 
-  <!-- Image Section -->
-  <div class="image-box">
-    <p>Images</p>
-  </div>
+  <div class="image-box">Images</div>
 
-  <!-- Categories -->
   <h3 class="section-title">Categories Section</h3>
-  <div class="category-grid">
-    <div class="category"></div>
-    <div class="category"></div>
-    <div class="category"></div>
-    <div class="category"></div>
-    <div class="category"></div>
-    <div class="category"></div>
+  <div class="categories">
+    <div class="category" *ngFor="let c of categories">
+      {{ c }}
+    </div>
   </div>
 
-  <!-- Products -->
   <h3 class="section-title">Product Listings</h3>
   <div class="product-grid">
-    <div class="product"></div>
-    <div class="product"></div>
-    <div class="product"></div>
-    <div class="product"></div>
+    <div class="product" *ngFor="let p of products">
+      <img [src]="p.image" alt="{{ p.name }}" />
+      <h4>{{ p.name }}</h4>
+      <p>₹{{ p.price }}</p>
+    </div>
   </div>
+
 </div>

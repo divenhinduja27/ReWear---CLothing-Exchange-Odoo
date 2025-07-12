@@ -1,52 +1,42 @@
-<!--/* <div class="dashboard-container">-->
-<!--  <app-navbar></app-navbar>-->
+<div class="dashboard-container">
 
-<!--  <div class="dashboard-content">-->
-<!--    <header class="dashboard-header">-->
-<!--      <div class="profile-picture"></div>-->
+  <main class="dashboard-content">
+    <header class="dashboard-header" role="banner">
+      <div class="profile-picture" aria-label="User Profile Picture"></div>
 
-<!--      <div class="user-info">-->
-<!--        <h2>{{ user.fullName }}</h2>-->
-<!--        <p><strong>Email:</strong> {{ user.email }}</p>-->
-<!--        <p><strong>Username:</strong> {{ user.username }}</p>-->
-<!--        <p><strong>Member Since:</strong> {{ user.memberSince | date }}</p>-->
-<!--      </div>-->
+      <section class="user-info">
+        <h2>{{ user.fullName }}</h2>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Member Since:</strong> {{ user.memberSince | date: 'longDate' }}</p>
+      </section>
 
-<!--      <div class="user-stats">-->
-<!--        <div class="stat">-->
-<!--          <h4>{{ user.stats.listings }}</h4>-->
-<!--          <p>Listings</p>-->
-<!--        </div>-->
-<!--        <div class="stat">-->
-<!--          <h4>{{ user.stats.purchases }}</h4>-->
-<!--          <p>Purchases</p>-->
-<!--        </div>-->
-<!--        <div class="stat">-->
-<!--          <h4>{{ user.stats.reviews }}</h4>-->
-<!--          <p>Reviews</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </header>-->
+      <section class="user-stats" aria-label="User Statistics">
+        <div class="stat" *ngFor="let stat of stats">
+          <h4>{{ stat.value }}</h4>
+          <p>{{ stat.label }}</p>
+        </div>
+      </section>
+    </header>
 
-<!--    <section class="dashboard-section">-->
-<!--      <h3>My Listings</h3>-->
-<!--      <div class="items-grid">-->
-<!--        <div class="item-card" *ngFor="let listing of user.listings">-->
-<!--          <img [src]="listing.image" alt="{{ listing.title }}" />-->
-<!--          <p>{{ listing.title }}</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
+    <section class="dashboard-section" *ngIf="user.listings.length">
+      <h3>My Listings</h3>
+      <div class="items-grid">
+        <article class="item-card" *ngFor="let listing of user.listings">
+          <img [src]="listing.image" [alt]="listing.title" />
+          <p>{{ listing.title }}</p>
+        </article>
+      </div>
+    </section>
 
-<!--    <section class="dashboard-section">-->
-<!--      <h3>My Purchases</h3>-->
-<!--      <div class="items-grid">-->
-<!--        <div class="item-card" *ngFor="let purchase of user.purchases">-->
-<!--          <img [src]="purchase.image" alt="{{ purchase.title }}" />-->
-<!--          <p>{{ purchase.title }}</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--  </div>-->
-<!--</div>-->
-<!--*/-->
+    <section class="dashboard-section" *ngIf="user.purchases.length">
+      <h3>My Purchases</h3>
+      <div class="items-grid">
+        <article class="item-card" *ngFor="let purchase of user.purchases">
+          <img [src]="purchase.image" [alt]="purchase.title" />
+          <p>{{ purchase.title }}</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>

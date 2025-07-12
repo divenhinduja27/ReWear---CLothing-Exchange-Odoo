@@ -8,7 +8,7 @@
 }
 
 .dashboard-content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   background-color: #1f1f1f;
   border-radius: 16px;
@@ -18,6 +18,7 @@
 
 .dashboard-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 30px;
   margin-bottom: 30px;
@@ -33,10 +34,15 @@
   background-image: url('/assets/avatar.png');
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
+}
+
+.user-info {
+  flex: 1;
 }
 
 .user-info h2 {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 .user-info p {
@@ -46,9 +52,10 @@
 }
 
 .user-stats {
-  margin-left: auto;
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .user-stats .stat {
@@ -81,6 +88,7 @@
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 .item-card {
@@ -104,5 +112,7 @@
   width: 100%;
   border-radius: 10px;
   margin-bottom: 8px;
+  object-fit: cover;
+  height: 100px;
 }
 */

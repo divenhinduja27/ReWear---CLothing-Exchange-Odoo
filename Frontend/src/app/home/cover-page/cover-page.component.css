@@ -1,0 +1,166 @@
+:host {
+  display: block;
+  background-color: #0f0f0f;
+  color: #fbf5de;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1c1c1c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3D74B6;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #FBF5DE;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #DC3C22;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #1c1c1c, #2c2c2c);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #EAC8A6;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-buttons button:first-child {
+  background-color: #3D74B6;
+  color: #fff;
+}
+
+.cta-buttons .secondary {
+  background-color: #EAC8A6;
+  color: #1c1c1c;
+}
+
+.cta-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Carousel Section */
+.carousel-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Carousel Container */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Optional: hide scrollbar on WebKit browsers */
+}
+
+/* Individual Item */
+.carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 180px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(220, 60, 34, 0.4);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-item h4 {
+  color: #EAC8A6;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 3rem 2rem;
+  background-color: #1c1c1c;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.testimonial {
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial span {
+  color: #3D74B6;
+  font-weight: bold;
+}

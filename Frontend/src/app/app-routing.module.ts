@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AdminPanelComponent } from './home/admin-panel/admin-panel.component';
 import { UserDashboardComponent } from './auth/user-dashboard/user-dashboard.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,10 @@ const routes: Routes = [
     path:'userDashboard',
     component:UserDashboardComponent
   },
-  
+  {
+    path: 'navbar',
+    component: NavbarComponent
+  }
 ];
 
 @NgModule({
