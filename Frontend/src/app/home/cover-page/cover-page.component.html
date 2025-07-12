@@ -1,1 +1,40 @@
-<p>cover-page works!</p>
+<!-- Header -->
+<header class="header">
+  <div class="logo">ClothSwap</div>
+  <nav class="nav-links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/browse">Browse</a>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/signup">Sign Up</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Swap Clothes. Save the Planet.</h1>
+  <p>Join the community-driven fashion exchange.</p>
+  <div class="cta-buttons">
+    <button routerLink="/signup">Start Swapping</button>
+    <button class="secondary" routerLink="/browse">Browse Items</button>
+  </div>
+</section>
+
+<!-- Featured Carousel -->
+<section class="carousel-section">
+  <h2>Featured Items</h2>
+  <div class="carousel">
+    <div class="carousel-item" *ngFor="let item of featuredItems">
+      <img [src]="item.image" [alt]="item.name" />
+      <h4>{{ item.name }}</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Users Say</h2>
+  <div class="testimonial" *ngFor="let t of testimonials">
+    <p>"{{ t.feedback }}"</p>
+    <span>- {{ t.user }}</span>
+  </div>
+</section>
