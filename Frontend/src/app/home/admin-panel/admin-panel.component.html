@@ -1,1 +1,29 @@
-<p>admin-panel works!</p>
+<div class="admin-panel">
+  <header>
+    <h1>Admin Panel</h1>
+    <input type="text" placeholder="Search..." />
+  </header>
+
+  <nav>
+    <button>Manage Users</button>
+    <button>Manage Orders</button>
+    <button>Manage Listings</button>
+  </nav>
+
+  <section class="user-section">
+    <h2>Manage Users</h2>
+
+    <div class="user-card" *ngFor="let user of users">
+      <div class="avatar"></div>
+      <div class="details">
+        <strong>{{ user.name }}</strong><br />
+        {{ user.email }}
+      </div>
+      <div class="actions">
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+
+  </section>
+</div>
